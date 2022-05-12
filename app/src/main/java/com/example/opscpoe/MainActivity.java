@@ -2,6 +2,7 @@ package com.example.opscpoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,26 +30,28 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (username.getText().toString().equals("Jared") && password.getText().toString().equals("Zeezo123")) {
 
-                        //correct
-                        Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
-
-
-
-
-                    } else Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-
-                }
+                    //correct
+                    Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
+                    OpenHome();
 
 
 
 
 
+                } else Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
 
-
+            }
 
 
             //incorrect
         });
 
+
+    }
+
+    public void OpenHome()
+    {
+        Intent intent = new Intent(this, HomePage.class);
+        startActivity(intent);
     }
 }
