@@ -16,13 +16,16 @@
             android:name=".Collections_page"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".Activity.RegisterPage"
             android:exported="false" />
         <activity
-            android:name=".HomePage"
+            android:name=".Activity.HomePage"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.CategoryItemsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

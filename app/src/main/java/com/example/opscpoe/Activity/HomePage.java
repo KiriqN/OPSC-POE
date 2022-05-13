@@ -1,4 +1,4 @@
-package com.example.opscpoe;
+package com.example.opscpoe.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,9 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.opscpoe.Collections_page;
+import com.example.opscpoe.R;
 
 public class HomePage extends AppCompatActivity {
 

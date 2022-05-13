@@ -1,4 +1,4 @@
-package com.example.opscpoe;
+package com.example.opscpoe.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,14 +6,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.opscpoe.R;
 import com.google.android.material.button.MaterialButton;
 
 
-public class Register extends AppCompatActivity {
+public class RegisterPage extends AppCompatActivity {
 
     private EditText registerUser;
     private EditText registerPassword;
@@ -42,7 +42,7 @@ public class Register extends AppCompatActivity {
             SharedPreferences.Editor editor = credentials.edit();
 
             editor.putString(newUser, newPassword);
-            Toast.makeText(Register.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterPage.this, "Registration Successful", Toast.LENGTH_SHORT).show();
             editor.commit();
 
             sendLogin();
