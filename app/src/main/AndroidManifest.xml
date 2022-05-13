@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OPSCPOE">
         <activity
+            android:name=".add_item_page"
+            android:exported="false" />
+        <activity
             android:name=".Collections_page"
             android:exported="false" />
         <activity
