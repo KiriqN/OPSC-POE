@@ -6,20 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".add_item_page">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_name"
-        android:layout_width="323dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="30dp"
-
+    <ImageView
+        android:id="@+id/display_item_image"
+        android:layout_width="243dp"
+        android:layout_height="243dp"
+        android:layout_marginTop="168dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_input_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Input Item Name..." />
-    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/add_item_button"
+        android:layout_width="212dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="Choose Photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display_item_image" />
+
+    <EditText
+        android:id="@+id/item_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/display_item_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/done_button"
+        android:layout_width="284dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:text="Done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
