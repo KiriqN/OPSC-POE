@@ -25,6 +25,8 @@
         android:numColumns="2"
         android:horizontalSpacing="10dp"
         android:verticalSpacing="10dp"
+
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
