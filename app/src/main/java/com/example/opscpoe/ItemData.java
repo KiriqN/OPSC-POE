@@ -6,6 +6,7 @@ public class ItemData {
 
     public String item_name;
 
+
     public ItemData (int give_item_id, String give_item_name) {
 
         item_id = give_item_id;

@@ -18,19 +18,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/item_grid_layout"
-        android:layout_width="345dp"
-        android:layout_height="591dp"
-        android:layout_columnSpan="50"
-        app:columnCount="3"
+    <GridView
+        android:id="@+id/grid_view_item"
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        android:numColumns="2"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_button"
-        app:layout_constraintVertical_bias="0.431">
-
-
-    </androidx.gridlayout.widget.GridLayout>
+        app:layout_constraintTop_toBottomOf="@+id/add_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

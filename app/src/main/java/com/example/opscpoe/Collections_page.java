@@ -3,12 +3,21 @@ package com.example.opscpoe;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.gridlayout.widget.GridLayout;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.Collection;
@@ -24,7 +33,11 @@ public class Collections_page extends AppCompatActivity {
 
 
     Button add_button;
-    GridLayout grid;
+    GridView item_list;
+
+
+
+    //CardView card_item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +46,7 @@ public class Collections_page extends AppCompatActivity {
 
         add_button = findViewById(R.id.add_button);
 
-        grid = (GridLayout) findViewById(R.id.item_grid_layout);
+        item_list = findViewById(R.id.grid_view_item);
 
         items = new List<ItemData>() {
             @Override
@@ -158,6 +171,19 @@ public class Collections_page extends AppCompatActivity {
             }
         };
 
+        int[] itemsarray = new int[]{
+                R.drawable.google, R.drawable.google, R.drawable.google, R.drawable.google
+        };
+
+
+
+        grid_adapter gd = new grid_adapter(this, itemsarray);
+
+
+        item_list.setAdapter(gd);
+
+
+        item_list.setBackgroundColor(Color.WHITE);
 
 
 
@@ -175,35 +201,69 @@ public class Collections_page extends AppCompatActivity {
 
         Toast.makeText(Collections_page.this, "added item : " + item_index_counter, Toast.LENGTH_SHORT).show();
 
-
-
-        CreateButton(item_name);
+        //AddGridItem(item_name);
 
         item_index_counter++;
 
     }
 
+    void AddGridItem (String name) {
 
-    void CreateButton (String item_name) {
+        //Button button = new Button(this);
 
-        Button item_button = new Button(this);
-        item_button.setText(item_name);
+        //button.setText(name);
 
-        item_button.setLayoutParams(new android.widget.GridLayout.LayoutParams());
+        //item_list.addView(button);
 
-
-        grid.addView(item_button);
-
-
-
-
-
-        items.add(new ItemData(item_index_counter, item_name));
 
 
     }
 
 
-
-
 }
+
+
+
+ class grid_adapter extends BaseAdapter {
+    Context c;
+    int items[];
+
+    grid_adapter(Context c, int arr[])
+    {
+        this.c = c;
+        items = arr;
+    }
+
+    @Override
+    public int getCount()
+    {
+        return items.length;
+    }
+
+    @Override
+    public Object getItem(int i)
+    {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int i)
+    {
+        return 0;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup)
+    {
+        if (view == null)
+        {
+            LayoutInflater inflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.grid_layout, null);
+        }
+        ImageView imageView = view.findViewById(R.id.imageView);
+        imageView.setImageResource(items[i]);
+        return view;
+    }
+}
+
+
