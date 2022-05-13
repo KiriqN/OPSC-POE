@@ -6,5 +6,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/home">
 
-
+    <Button
+        android:id="@+id/go_collections_button"
+        android:layout_width="205dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="6dp"
+        android:text="Collections" />
 </RelativeLayout>
