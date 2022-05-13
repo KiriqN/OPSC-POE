@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Collection;
@@ -171,13 +172,16 @@ public class Collections_page extends AppCompatActivity {
             }
         };
 
-        int[] itemsarray = new int[]{
-                R.drawable.google, R.drawable.google, R.drawable.google, R.drawable.google
+
+
+        ItemData[] item_data_array = new ItemData[] {
+                new ItemData(0, "item 1", R.drawable.google),
+                new ItemData(1, "item 2", R.drawable.google),
+                new ItemData(2, "item 3", R.drawable.google),
+
         };
 
-
-
-        grid_adapter gd = new grid_adapter(this, itemsarray);
+        grid_adapter gd = new grid_adapter(this, item_data_array);
 
 
         item_list.setAdapter(gd);
@@ -226,18 +230,21 @@ public class Collections_page extends AppCompatActivity {
 
  class grid_adapter extends BaseAdapter {
     Context c;
-    int items[];
 
-    grid_adapter(Context c, int arr[])
+
+    ItemData[] items_data;
+
+    grid_adapter(Context c, ItemData[] i_data)
     {
         this.c = c;
-        items = arr;
+        items_data = i_data;
+
     }
 
     @Override
     public int getCount()
     {
-        return items.length;
+        return items_data.length;
     }
 
     @Override
@@ -261,7 +268,10 @@ public class Collections_page extends AppCompatActivity {
             view = inflater.inflate(R.layout.grid_layout, null);
         }
         ImageView imageView = view.findViewById(R.id.imageView);
-        imageView.setImageResource(items[i]);
+        imageView.setImageResource(items_data[i].item_image);
+        TextView item_name = view.findViewById(R.id.textView);
+        item_name.setText(items_data[i].item_name);
+
         return view;
     }
 }
