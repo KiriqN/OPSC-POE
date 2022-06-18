@@ -63,7 +63,7 @@ public class add_item_page extends AppCompatActivity {
         done_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StoreItemData(selected_image, item_text.getText().toString());
+               // StoreItemData(selected_image, item_text.getText().toString());
 
 
             }
@@ -92,7 +92,7 @@ public class add_item_page extends AppCompatActivity {
     }
 
 
-    void StoreItemData (Uri image, String name) {
+    void StoreItemData (int image, String name) {
 
         created_item = new ItemData(name, image);
 

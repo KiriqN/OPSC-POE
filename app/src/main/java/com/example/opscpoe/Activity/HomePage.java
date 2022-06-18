@@ -17,7 +17,7 @@ import com.example.opscpoe.R;
 public class HomePage extends AppCompatActivity {
 
 
-    private Button collections_button;
+    private Button collection_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,9 @@ public class HomePage extends AppCompatActivity {
 
 
 
-        collections_button = (Button) findViewById(R.id.go_collections_button);
+        collection_button = (Button) findViewById(R.id.go_collection_button);
 
-        collections_button.setOnClickListener(new View.OnClickListener() {
+        collection_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 OpenCollections();
@@ -41,7 +41,7 @@ public class HomePage extends AppCompatActivity {
 
     public void OpenCollections () {
 
-        Intent intent = new Intent(this, Collections_page.class);
+        Intent intent = new Intent(this, RecyclePage.class);
         startActivity(intent);
 
     }

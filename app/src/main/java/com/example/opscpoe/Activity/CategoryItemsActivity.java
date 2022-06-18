@@ -20,6 +20,7 @@ import com.example.opscpoe.Collections_page;
 import com.example.opscpoe.ItemData;
 import com.example.opscpoe.R;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.LinkedList;
 

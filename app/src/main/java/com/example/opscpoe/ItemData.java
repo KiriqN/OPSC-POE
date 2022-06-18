@@ -5,6 +5,7 @@ import android.media.Image;
 import android.widget.ImageButton;
 
 import java.io.Serializable;
+import java.net.URI;
 
 public class ItemData implements Serializable {
     public String item_name;

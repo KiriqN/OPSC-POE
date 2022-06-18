@@ -32,7 +32,7 @@ public class Collections_page extends AppCompatActivity {
 
     private ArrayList<Category> categoryList = new ArrayList<>();
 
-    // CardView card_item;
+    //CardView card_item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
