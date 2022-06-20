@@ -4,16 +4,24 @@ import java.lang.reflect.Array;
 
 public class Category_Data_Type {
 
+
+
     String category_name;
 
     int max_items;
 
+    int current_items;
+
+    int remaining_items;
+
     Item_Data_Type[] items;
 
 
-    public Category_Data_Type(String category_name, int max_items, Item_Data_Type[] items) {
+    public Category_Data_Type(String category_name, int max_items, int current_items, int remaining_items, Item_Data_Type[] items) {
         this.category_name = category_name;
         this.max_items = max_items;
+        this.current_items = current_items;
+        this.remaining_items = remaining_items;
         this.items = items;
     }
 
@@ -32,6 +40,22 @@ public class Category_Data_Type {
 
     public void setMax_items(int max_items) {
         this.max_items = max_items;
+    }
+
+    public int getCurrent_items() {
+        return current_items;
+    }
+
+    public void setCurrent_items(int current_items) {
+        this.current_items = current_items;
+    }
+
+    public int getRemaining_items() {
+        return remaining_items;
+    }
+
+    public void setRemaining_items(int remaining_items) {
+        this.remaining_items = remaining_items;
     }
 
     public Item_Data_Type[] getItems() {

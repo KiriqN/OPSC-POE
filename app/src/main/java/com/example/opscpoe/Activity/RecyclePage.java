@@ -68,7 +68,7 @@ public class RecyclePage extends AppCompatActivity implements recycler_view_inte
            // Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();"
             items.add(editText.getText().toString());
 
-            category_data_types.add(new Category_Data_Type(editText.getText().toString() , 0, null));
+            category_data_types.add(new Category_Data_Type(editText.getText().toString() , 0, 0, 0, null));
 
 
 
