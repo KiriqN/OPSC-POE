@@ -92,9 +92,11 @@
 
 
         <ImageView
+            android:id="@+id/google_btn"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/google" />
+
 
 
 

@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class RecyclePage extends AppCompatActivity implements recycler_view_interface {
 
-    String []data = {"Overwatch", "DC", "Marvel"};
+    String []data = {""};
     int counter = 0;
 
 
@@ -56,7 +56,6 @@ public class RecyclePage extends AppCompatActivity implements recycler_view_inte
             @Override
             public void onClick(View v) {
 
-
             }
         });
 
@@ -73,7 +72,7 @@ public class RecyclePage extends AppCompatActivity implements recycler_view_inte
 
 
 
-            adapter.notifyItemInserted(items.size()-1);
+            adapter.notifyItemInserted(items.size()+1);
         });
     }
 
