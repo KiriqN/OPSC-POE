@@ -1,0 +1,44 @@
+package com.example.opscpoe.Activity;
+
+import java.lang.reflect.Array;
+
+public class Category_Data_Type {
+
+    String category_name;
+
+    int max_items;
+
+    Item_Data_Type[] items;
+
+
+    public Category_Data_Type(String category_name, int max_items, Item_Data_Type[] items) {
+        this.category_name = category_name;
+        this.max_items = max_items;
+        this.items = items;
+    }
+
+
+    public String getCategory_name() {
+        return category_name;
+    }
+
+    public void setCategory_name(String category_name) {
+        this.category_name = category_name;
+    }
+
+    public int getMax_items() {
+        return max_items;
+    }
+
+    public void setMax_items(int max_items) {
+        this.max_items = max_items;
+    }
+
+    public Item_Data_Type[] getItems() {
+        return items;
+    }
+
+    public void setItems(Item_Data_Type[] items) {
+        this.items = items;
+    }
+}

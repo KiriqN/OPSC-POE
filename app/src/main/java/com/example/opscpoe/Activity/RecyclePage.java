@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,10 +24,13 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.Map;
 
-public class RecyclePage extends AppCompatActivity implements DemoVH.OnNoteListener {
+public class RecyclePage extends AppCompatActivity implements recycler_view_interface {
 
     String []data = {"Overwatch", "DC", "Marvel"};
     int counter = 0;
+
+
+    ArrayList<Category_Data_Type> category_data_types = new ArrayList<>();
 
     public static final String TAG = "yay I'm clicked";
 
@@ -41,10 +45,11 @@ public class RecyclePage extends AppCompatActivity implements DemoVH.OnNoteListe
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        DemoAdapter adapter = new DemoAdapter(items,this);
+        DemoAdapter adapter = new DemoAdapter(items, this);
         recyclerView.setAdapter(adapter);
 
         Button btn = findViewById(R.id.Add);
+
         EditText editText= (EditText)findViewById(R.id.et_item);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +60,7 @@ public class RecyclePage extends AppCompatActivity implements DemoVH.OnNoteListe
             }
         });
 
-
+        
 
         findViewById(R.id.Add).setOnClickListener(view -> {
          //   items.add(data[counter%3]);
@@ -63,16 +68,42 @@ public class RecyclePage extends AppCompatActivity implements DemoVH.OnNoteListe
          //   items.add("Code it 2");
            // Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();"
             items.add(editText.getText().toString());
+
+            category_data_types.add(new Category_Data_Type(editText.getText().toString() , 0, null));
+
+
+
             adapter.notifyItemInserted(items.size()-1);
         });
     }
 
+
+ /*
     @Override
     public void onNoteClick(int position) {
       //  Log.d(TAG, "onNoteClick: " + position);
 
+
+
+
        // Intent intent = new Intent(this, RegisterPage.class);
        // intent.putExtra("category name", "something else");
        // startActivity(intent);
+    }
+
+   */
+
+
+    @Override
+    public void row_click_reciever(int index) {
+
+        Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, Item_Test.class);
+
+        intent.putExtra("name_data", category_data_types.get(index).category_name);
+
+        startActivity(intent);
+
     }
 }
