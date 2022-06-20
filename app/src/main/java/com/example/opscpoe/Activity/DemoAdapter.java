@@ -5,6 +5,7 @@ package com.example.opscpoe.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,8 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoVH> {
 
     List<String> items;
     private DemoVH.OnNoteListener mOnNoteListener;
+    public ProgressBar progressBar;
+
 
     recycler_view_interface view_interface;
 
@@ -61,6 +64,11 @@ class DemoVH extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public DemoVH(@NonNull View itemView, OnNoteListener onNoteListener, recycler_view_interface view_interface) {
         super(itemView);
+
+
+
+
+
 
         itemView.setOnClickListener(new View.OnClickListener() {//------I moved ot here outside that so its added in creation
             @Override
@@ -112,6 +120,8 @@ class DemoVH extends RecyclerView.ViewHolder implements View.OnClickListener {
         this.adapter = adapter;
         return this;
     }
+
+
 
 
 

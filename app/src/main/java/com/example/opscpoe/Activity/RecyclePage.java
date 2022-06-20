@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,6 +29,8 @@ public class RecyclePage extends AppCompatActivity implements recycler_view_inte
 
     String []data = {""};
     int counter = 0;
+   public ProgressBar progressBar;
+
 
 
     ArrayList<Category_Data_Type> category_data_types = new ArrayList<>();
@@ -69,6 +72,8 @@ public class RecyclePage extends AppCompatActivity implements recycler_view_inte
             items.add(editText.getText().toString());
 
             category_data_types.add(new Category_Data_Type(editText.getText().toString() , 0, 0, 0, null));
+
+
 
 
 

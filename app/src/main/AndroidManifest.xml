@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OPSCPOE">
         <activity
+            android:name=".Graph"
+            android:exported="false"
+            android:label="@string/title_activity_graph"
+            android:theme="@style/Theme.OPSCPOE.NoActionBar" />
+        <activity
             android:name=".Activity.Create_Category"
             android:exported="false" />
         <activity

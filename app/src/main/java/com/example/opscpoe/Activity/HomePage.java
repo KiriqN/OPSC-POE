@@ -12,12 +12,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.opscpoe.Collections_page;
+import com.example.opscpoe.Graph;
 import com.example.opscpoe.R;
 
 public class HomePage extends AppCompatActivity {
 
 
     private Button collection_button;
+    private Button completion_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,15 @@ public class HomePage extends AppCompatActivity {
 
 
 
-
+        completion_button = (Button) findViewById(R.id.goals);
         collection_button = (Button) findViewById(R.id.go_collection_button);
+
+        completion_button.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goals();
+            }
+        }));
 
         collection_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,11 +48,18 @@ public class HomePage extends AppCompatActivity {
 
     }
 
-    public void OpenCollections () {
+    public void OpenCollections ()
+    {
 
         Intent intent = new Intent(this, RecyclePage.class);
         startActivity(intent);
 
+    }
+
+    public void goals()
+    {
+        Intent intent = new Intent(this, Graph.class);
+        startActivity(intent);
     }
 
 
