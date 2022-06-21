@@ -72,6 +72,8 @@ public class AddItemPage extends AppCompatActivity {
 
         UserCategories.user_category_information.get(cat_index).items.add(new Item_Data_Type(null , item_name, 0 ,  UserCategories.user_category_information.get(cat_index), 0));
 
+        UserCategories.user_category_information.get(cat_index).current_items++;
+
     }
 
 

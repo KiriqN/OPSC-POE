@@ -38,6 +38,8 @@ public class Item_Test extends AppCompatActivity implements recycler_view_interf
 
     Button add_item_button;
 
+    Button back_button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,14 @@ public class Item_Test extends AppCompatActivity implements recycler_view_interf
 
 
         add_item_button = findViewById(R.id.add_item_button);
+        back_button = findViewById(R.id.back_button);
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Back_Button();
+            }
+        });
 
         //category_data_types = UserCategories.user_category_information;
 
@@ -101,6 +111,14 @@ public class Item_Test extends AppCompatActivity implements recycler_view_interf
 
    */
 
+
+    void Back_Button () {
+
+        Intent intent = new Intent(this, RecyclePage.class);
+
+        startActivity(intent);
+
+    }
 
     void AddItem () {
 

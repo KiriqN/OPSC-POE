@@ -44,6 +44,8 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoVH> {
     public void onBindViewHolder(@NonNull DemoVH holder, int position) {
 
         holder.textView.setText(items.get(position));
+        holder.p_bar.setMax(UserCategories.user_category_information.get(position).max_items);
+        holder.p_bar.setProgress(UserCategories.user_category_information.get(position).current_items);
 
     }
 
@@ -59,6 +61,7 @@ class DemoVH extends RecyclerView.ViewHolder implements View.OnClickListener {
     TextView textView;
     private DemoAdapter adapter;
     OnNoteListener onNoteListener;
+    ProgressBar p_bar;
 
     public String name_data;
 
@@ -93,6 +96,8 @@ class DemoVH extends RecyclerView.ViewHolder implements View.OnClickListener {
 
 
         textView = itemView.findViewById(R.id.text);
+        p_bar = itemView.findViewById(R.id.progressbar);
+
         itemView.findViewById(R.id.delete).setOnClickListener(view -> {//-------the on click for the delete button
 
 
