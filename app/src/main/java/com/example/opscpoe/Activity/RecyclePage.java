@@ -113,6 +113,8 @@ public class RecyclePage extends AppCompatActivity implements recycler_view_inte
 
         intent.putExtra("name_data", category_data_types.get(index).category_name);
 
+        intent.putExtra("category_index_data" , index);
+
         startActivity(intent);
 
     }

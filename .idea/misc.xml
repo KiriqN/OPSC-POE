@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ethan/AndroidStudioProjects/OPSC-POE/app/src/main/res/layout/activity_add_item_page.xml" value="0.1274062816616008" />
+        <entry key="..\:/Users/ethan/AndroidStudioProjects/OPSC-POE/app/src/main/res/layout/activity_add_item_page2.xml" value="0.17" />
+        <entry key="..\:/Users/ethan/AndroidStudioProjects/OPSC-POE/app/src/main/res/layout/activity_create_category.xml" value="0.1358695652173913" />
+        <entry key="..\:/Users/ethan/AndroidStudioProjects/OPSC-POE/app/src/main/res/layout/activity_item_test.xml" value="0.22" />
+        <entry key="..\:/Users/ethan/AndroidStudioProjects/OPSC-POE/app/src/main/res/layout/activity_recycle_page.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/ethan/AndroidStudioProjects/OPSC-POE/app/src/main/res/layout/items_page.xml" value="0.1358695652173913" />
         <entry key="..\:/Users/jared/AndroidStudioProjects/OPSCPOE2/app/src/main/res/layout/activity_add_item_page.xml" value="0.12031408308004053" />
         <entry key="..\:/Users/jared/AndroidStudioProjects/OPSCPOE2/app/src/main/res/layout/activity_collections_page.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jared/AndroidStudioProjects/OPSCPOE2/app/src/main/res/layout/activity_graph.xml" value="0.17831813576494426" />

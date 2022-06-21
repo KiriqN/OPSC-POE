@@ -1,6 +1,7 @@
 package com.example.opscpoe.Activity;
 
 import java.lang.reflect.Array;
+import java.util.List;
 
 public class Category_Data_Type {
 
@@ -14,10 +15,10 @@ public class Category_Data_Type {
 
     int remaining_items;
 
-    Item_Data_Type[] items;
+    List<Item_Data_Type> items;
 
 
-    public Category_Data_Type(String category_name, int max_items, int current_items, int remaining_items, Item_Data_Type[] items) {
+    public Category_Data_Type(String category_name, int max_items, int current_items, int remaining_items, List<Item_Data_Type> items) {
         this.category_name = category_name;
         this.max_items = max_items;
         this.current_items = current_items;
@@ -58,11 +59,11 @@ public class Category_Data_Type {
         this.remaining_items = remaining_items;
     }
 
-    public Item_Data_Type[] getItems() {
+    public  List<Item_Data_Type> getItems() {
         return items;
     }
 
-    public void setItems(Item_Data_Type[] items) {
+    public void setItems( List<Item_Data_Type> items) {
         this.items = items;
     }
 }

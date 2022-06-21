@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.opscpoe.R;
 
@@ -18,47 +17,47 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Create_Category extends AppCompatActivity {
+public class AddItemPage extends AppCompatActivity {
 
-    String category_name;
 
-    int max_items;
+    String item_name;
 
-    Button done_button;
+    int cat_index;
 
-    Button cancel_button;
+    EditText editText;
 
-    EditText name_input_field;
-
-    EditText max_items_input_field;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_category);
+        setContentView(R.layout.activity_add_item_page2);
 
-        done_button = findViewById(R.id.cat_creation_done_button);
 
-        cancel_button = findViewById(R.id.cat_creation_cancel_button);
+        cat_index = getIntent().getIntExtra("category_index_data", 0);
 
-        name_input_field = findViewById(R.id.cat_name_input_field);
+        editText = findViewById(R.id.item_name_input_field);
 
-        max_items_input_field = findViewById(R.id.cat_max_items_input_field);
+        Button done_button = findViewById(R.id.item_done_button);
 
         done_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Done_Button();
+                Done();
             }
         });
+
+        Button cancel_button = findViewById(R.id.item_cancel_button);
 
         cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cancel_Button();
+                Cancel();
             }
         });
+
+
+       // SetData();
 
 
 
@@ -66,32 +65,12 @@ public class Create_Category extends AppCompatActivity {
 
     void SetData () {
 
-       category_name = name_input_field.getText().toString();
+        item_name = editText.getText().toString();
 
-       Integer max_items_parse = Integer.parseInt(max_items_input_field.getText().toString());
-
-       max_items = max_items_parse;
-
-
-    }
-
-
-    void Done_Button () {
-
-        SetData();
-
-        Intent intent = new Intent(this, RecyclePage.class);
-
-        //Toast.makeText(this, category_name + max_items, Toast.LENGTH_SHORT).show();
-
-        intent.putExtra("category_name_data" , category_name);
-
-        intent.putExtra("category_max_items_data", max_items);
-
-        List<Item_Data_Type> new_items = new List<Item_Data_Type>() {
+        UserCategories.user_category_information.get(cat_index).items = new List<Item_Data_Type>() {
             @Override
             public int size() {
-                return max_items;
+                return UserCategories.user_category_information.get(cat_index).max_items;
             }
 
             @Override
@@ -211,24 +190,28 @@ public class Create_Category extends AppCompatActivity {
             }
         };
 
-        UserCategories.user_category_information.add(new Category_Data_Type(category_name, max_items, 0, 0, null));
-
-
-        startActivity(intent);
-
-    }
-
-    void Cancel_Button () {
-
-        Intent intent = new Intent(this , RecyclePage.class);
-
-        startActivity(intent);
-
+        UserCategories.user_category_information.get(cat_index).items.add(new Item_Data_Type(null , item_name, 0 ,  UserCategories.user_category_information.get(cat_index), 0));
 
     }
 
 
+    void Done () {
 
+        SetData();
 
+        Intent intent = new Intent(this, Item_Test.class);
 
+        //intent.putExtra("item_name_data" , item_name);
+
+        //startActivity(intent);
+
+    }
+
+    void Cancel () {
+
+        Intent intent = new Intent(this, Item_Test.class);
+
+        startActivity(intent);
+
+    }
 }
