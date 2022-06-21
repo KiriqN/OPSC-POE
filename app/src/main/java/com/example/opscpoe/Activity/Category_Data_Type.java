@@ -1,10 +1,10 @@
 package com.example.opscpoe.Activity;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Category_Data_Type {
-
 
 
     String category_name;
@@ -15,17 +15,16 @@ public class Category_Data_Type {
 
     int remaining_items;
 
-    List<Item_Data_Type> items;
+    ArrayList<Item_Data_Type> items = new ArrayList<>();
 
 
-    public Category_Data_Type(String category_name, int max_items, int current_items, int remaining_items, List<Item_Data_Type> items) {
+    public Category_Data_Type(String category_name, int max_items, int current_items, int remaining_items, ArrayList<Item_Data_Type> items) {
         this.category_name = category_name;
         this.max_items = max_items;
         this.current_items = current_items;
         this.remaining_items = remaining_items;
         this.items = items;
     }
-
 
     public String getCategory_name() {
         return category_name;
@@ -59,11 +58,12 @@ public class Category_Data_Type {
         this.remaining_items = remaining_items;
     }
 
-    public  List<Item_Data_Type> getItems() {
+    public ArrayList<Item_Data_Type> getItems() {
         return items;
     }
 
-    public void setItems( List<Item_Data_Type> items) {
+    public void setItems(ArrayList<Item_Data_Type> items) {
         this.items = items;
     }
 }
+
