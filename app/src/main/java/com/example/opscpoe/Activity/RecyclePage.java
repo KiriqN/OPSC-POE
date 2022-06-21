@@ -106,6 +106,7 @@ public class RecyclePage extends AppCompatActivity implements recycler_view_inte
     @Override
     public void row_click_reciever(int index) {
 
+
         Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, Item_Test.class);

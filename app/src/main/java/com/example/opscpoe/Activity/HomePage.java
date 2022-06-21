@@ -26,6 +26,13 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        Item_Data_Type[] items_cat1 = new Item_Data_Type[5];
+
+        Item_Data_Type[] items_cat2 = new Item_Data_Type[5];
+
+        Category_Data_Type cat1 = new Category_Data_Type("cat1" , 5 , 0 , 5 , items_cat1);
+
+        Category_Data_Type cat2 = new Category_Data_Type("cat2" , 5 , 0 , 5 , items_cat2);
 
 
 
